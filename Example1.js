@@ -20,6 +20,18 @@ class Example1 extends Phaser.Scene {
             this.shaggy.x = e.x;
             this.shaggy.y = e.y;
         })
+
+        this.input.keyboard.on('keyup_P', (e) =>{
+            var physicsImage = this.physics.add.image(this.shaggy.x, this.shaggy.y, 'shaggy' )
+            physicsImage.setVelocity(Phaser.Math.RND.integerInRange(-100,100),-500)
+        });
+
+        this.input.keyboard.on('keyup', (e)=>{
+            console.log(e)
+            if(e.key=='w'){
+                this.shaggy.y -= 10;
+            }
+        })
     }
 
     update(delta){
