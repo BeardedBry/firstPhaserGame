@@ -1,3 +1,4 @@
+
 var config = {
     type:Phaser.AUTO,
     width:800,
@@ -8,7 +9,7 @@ var config = {
             gravity: {y:  200}
         }
     },
-    scene: [Example1 ]
+    scene: [ Example1 ]
 }
 
 var game = new Phaser.Game(config);
