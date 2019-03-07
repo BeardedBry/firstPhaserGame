@@ -9,6 +9,8 @@ class Example1 extends Phaser.Scene {
 
     create() {
         this.shaggy = this.add.image(400,300,'shaggy');
+        this.shaggy.scaleX = .3;
+        this.shaggy.scaleY = .3;
 
         this.input.keyboard.on('keyup_D', ()=>{
             this.shaggy.x += 10;
@@ -27,10 +29,13 @@ class Example1 extends Phaser.Scene {
         });
 
         this.input.keyboard.on('keyup', (e)=>{
-            console.log(e)
-            if(e.key=='w'){
-                this.shaggy.y -= 10;
-            }
+            console.log(this.shaggy)
+            if(e.key=='2'){
+                this.scene.start('Example2');
+            } 
+            if(e.key=='3'){
+                this.scene.start('Example3');
+            } 
         })
     }
 
