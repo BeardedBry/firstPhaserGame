@@ -26,6 +26,7 @@ class Example2 extends Phaser.Scene{
 
     update(delta){
         if(this.key_1.isDown){
+            
             this.scene.start('Example1');
         }
     }

@@ -21,5 +21,17 @@ class Example3 extends Phaser.Scene{
             if(this.soundFX.isPlaying) this.soundFX.pause();
             else this.soundFX.resume();
         })
+
+        this.key_L = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.L);
+        this.key_K = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.K);
+    }
+
+    update(delta){
+        if(this.key_K.isDown){
+            this.soundFX.rate -=.02;
+        }
+        if(this.key_L.isDown){
+            this.soundFX.rate += .02;
+        }
     }
 }

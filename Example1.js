@@ -24,8 +24,17 @@ class Example1 extends Phaser.Scene {
         })
 
         this.input.keyboard.on('keyup_P', (e) =>{
+            var particles = this.add.particles('blue');
+            var emitter = particles.createEmitter({
+                speed:100,
+                scale: {start: 1, end: 0},
+                blendMode: 'ADD'
+            })
             var physicsImage = this.physics.add.image(this.shaggy.x, this.shaggy.y, 'shaggy' )
-            physicsImage.setVelocity(Phaser.Math.RND.integerInRange(-100,100),-500)
+            physicsImage.scaleX = .1;
+            physicsImage.scaleY = .1;
+            physicsImage.setVelocity(Phaser.Math.RND.integerInRange(-100,100),-500);
+            emitter.startFollow(physicsImage);
         });
 
         this.input.keyboard.on('keyup', (e)=>{
