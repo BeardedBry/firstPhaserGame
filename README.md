@@ -5,7 +5,7 @@ Just following a tutorial to learn some of the basics on input, output, changing
 In order to run:
 
 1.  Download this repository.
-2.  Run ```npm install phaser```
+2.  Run ```npm install phaser``` in the directory.
 3.  Start a local server in the directory. (such as ```python -m http.server```)
 
 # In the game
